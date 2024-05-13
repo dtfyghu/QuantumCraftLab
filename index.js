@@ -1,2 +1,6 @@
-const currentDate = new Date();
-console.log(currentDate); // Fri 2024-04-05T09:17:00.000Z
+const flatten = (arr, depth = 1) =>
+  arr.reduce(
+    (a, v) =>
+      a.concat(depth > 1 && Array.isArray(v) ? flatten(v, depth - 1) : v),
+    [],
+  );
